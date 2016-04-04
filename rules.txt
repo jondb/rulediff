@@ -1,17 +1,17 @@
-security-group test1 %(my_rule)s
-security-group launch-wizard-1 out tcp # %(my_cidr)s 33
+security-group default in ip sg:default # ALL
+security-group default out ip # 0.0.0.0/0 ALL
+security-group launch-wizard-1 in tcp 0.0.0.0/0 # 22
 security-group launch-wizard-1 in tcp 0.0.0.0/0 # 33
 security-group launch-wizard-1 out ip # 0.0.0.0/0 ALL
-security-group launch-wizard-1 in tcp 0.0.0.0/0 # 22
-security-group test2 out ip # 0.0.0.0/0 ALL
-security-group test1 out tcp # 172.31.1.0/24 107-115
-security-group test1 out tcp # 172.31.2.0/24 107-115
-security-group test1 out ip # 0.0.0.0/0 ALL
+security-group launch-wizard-1 out tcp # %(my_cidr)s 33
+security-group test1 %(my_rule)s
 security-group test1 in tcp 172.31.0.0/16 # 25
-security-group test1 in tcp sg:vpc2.test1 # 25
 security-group test1 in tcp sg:'vpc3 with spaces'.test1 # 25
 security-group test1 in tcp sg:vpc2.launch-wizard-1 # 100-105
-security-group default out ip # 0.0.0.0/0 ALL
-security-group default in ip sg:default # ALL
+security-group test1 in tcp sg:vpc2.test1 # 25
+security-group test1 out ip # 0.0.0.0/0 ALL
+security-group test1 out tcp # 172.31.1.0/24 107-115
+security-group test1 out tcp # 172.31.2.0/24 107-115
 security-group test1 out tcp # pl:pl-68a54001 118
+security-group test2 out ip # 0.0.0.0/0 ALL
 security-group test4 out tcp # 172.31.1.0/24 107-115
