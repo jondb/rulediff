@@ -3,6 +3,7 @@
 security-group default remark this is the default group applied to new instances and shouldn't be applied
 security-group default remark to any instances other than those created by mistake.
 security-group default in ip sg:default # ALL
+security-group default in ip 17.0.0.0/8 # 443
 security-group default out ip # 0.0.0.0/0 ALL
 
 # Instances `launch-wizard-1` is applied to (don't modify these lines):
@@ -18,7 +19,6 @@ security-group launch-wizard-1 out tcp # 17.0.0.0/8 443
 security-group test1 %(my_rule)s
 security-group test1 in tcp 172.31.0.0/16 # 25
 security-group test1 in tcp sg:'vpc3 with spaces'.test1 # 25
-security-group test1 in tcp sg:vpc2.launch-wizard-1 # 100-105
 security-group test1 in tcp sg:vpc2.test1 # 25
 security-group test1 out ip # 0.0.0.0/0 ALL
 security-group test1 out tcp # 172.31.1.0/24 107-115
