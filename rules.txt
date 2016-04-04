@@ -7,7 +7,7 @@ security-group default in ip 17.0.0.0/8 # 443
 security-group default out ip # 0.0.0.0/0 ALL
 
 # Instances `launch-wizard-1` is applied to (don't modify these lines):
-#   freedom_preprod, freedom_prod
+#   freedom_prod
 security-group launch-wizard-1 in tcp 0.0.0.0/0 # 22
 security-group launch-wizard-1 in tcp 0.0.0.0/0 # 33
 security-group launch-wizard-1 out ip # 0.0.0.0/0 ALL
@@ -15,7 +15,7 @@ security-group launch-wizard-1 out tcp # %(my_cidr)s 33
 security-group launch-wizard-1 out tcp # 17.0.0.0/8 443
 
 # Instances `test1` is applied to (don't modify these lines):
-#   movement-prod, syslog, jumbpx
+#   movement-prod, syslog
 security-group test1 %(my_rule)s
 security-group test1 in tcp 172.31.0.0/16 # 25
 security-group test1 in tcp sg:'vpc3 with spaces'.test1 # 25
@@ -26,7 +26,7 @@ security-group test1 out tcp # 172.31.2.0/24 107-115
 security-group test1 out tcp # pl:pl-68a54001 118
 
 # Instances `test2` is applied to (don't modify these lines):
-#   movement-prod, syslog, jumbpx
+#   movement-prod, syslog, jumbpx, bower
 security-group test2 out ip # 0.0.0.0/0 ALL
 
 # Instances `test4` is applied to (don't modify these lines):
