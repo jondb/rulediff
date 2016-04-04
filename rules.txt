@@ -9,7 +9,7 @@ security-group default out ip # 0.0.0.0/0 ALL
 # Instances `launch-wizard-1` is applied to (don't modify these lines):
 #   freedom_prod, freedom_new_preprod, freedom_new_prod
 security-group launch-wizard-1 in tcp 0.0.0.0/0 # 22
-security-group launch-wizard-1 in tcp 0.0.0.0/0 # 33
+security-group launch-wizard-1 in tcp 0.0.0.0/0 # 77
 security-group launch-wizard-1 out ip # 0.0.0.0/0 ALL
 security-group launch-wizard-1 out tcp # %(my_cidr)s 33
 security-group launch-wizard-1 out tcp # 17.0.0.0/8 443
