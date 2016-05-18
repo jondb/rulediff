@@ -19,7 +19,6 @@ security-group launch-wizard-1 out tcp # 17.0.0.0/8 443
 security-group test1 %(my_rule)s
 security-group test1 in tcp 172.31.0.0/16 # 25
 security-group test1 in tcp sg:'vpc3 with spaces'.test1 # 25
-security-group test1 in tcp sg:vpc2.test1 # 25
 security-group test1 out ip # 0.0.0.0/0 ALL
 security-group test1 out tcp # 172.31.1.0/24 107-115
 security-group test1 out tcp # 172.31.2.0/24 107-115
